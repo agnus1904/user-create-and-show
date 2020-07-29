@@ -1,0 +1,10 @@
+extends ../layouts/common
+
+block content
+    h1 Create page
+
+    form(aciont="/users/create", method="POST")
+        label(for="name") Input name 
+        input(type="text", name="name")
+
+        button Create

@@ -1,7 +1,12 @@
-h1 this is user site
+extends ../layouts/common
 
-input(type="text" id="input")
+block content
+  h1 user page
 
-ul
-    each list in lists
-        li= list
+  a(href="users/create") Create a new one
+  ul
+    each user in users
+      li
+        span= user.name
+        span &nbsp;
+        a(href="/users/"+user.id) View
