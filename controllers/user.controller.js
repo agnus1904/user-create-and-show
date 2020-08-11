@@ -17,12 +17,19 @@ module.exports.get = function(req,res){
 
 module.exports.postCreate =  function(req,res){
     req.body.id = shortid.generate();
+    req.body.avatar = req.file.path.split("/").slice(1).join("/");
     var errors = [];
     if(!req.body.name){
         errors.push("Name must be input");
     }
     if(!req.body.phone){
         errors.push("Number phone must be input");
+    }
+    if(!req.body.email){
+        errors.push("Email must be input");
+    }
+    if(!req.body.password){
+        errors.push("Password must be input");
     }
     if(errors.length){
         res.render("users/create",{

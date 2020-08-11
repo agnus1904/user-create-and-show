@@ -1,0 +1,15 @@
+extends ../layouts/common
+
+block content
+    div.container
+        div.row
+            each product in products
+                div(style="").offset-1.col-10.offset-sm-0.col-sm-6.col-md-4.d-flex.flex-column.align-items-center
+                    img(src=product.image,width="200px")
+                    br
+                    span.ml-3= product.name
+                    br
+                    span(style="height:150px")= product.description
+                    br
+                    button.btn.btn-primary.mb-4 add to cart
+        div.row

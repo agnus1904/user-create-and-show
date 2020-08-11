@@ -7,7 +7,7 @@ block content
         each error in errors
             .alert.alert-danger= error
 
-    form(aciont="/users/create", method="POST")
+    form(aciont="/users/create", method="POST", enctype="multipart/form-data")
         .form-group
             label(for="inputname") Input name 
             input#inputname.form-control.col-6(type="text", name="name",size="20", value=(valid) ? valid.name : '' )
@@ -16,5 +16,16 @@ block content
             label(for="inputphone") Input phone 
             input#inputphone.form-control.col-6(type="text", name="phone",size="20" value=(valid) ? valid.phone : '')
 
+        .form-group
+            label(for="inputemail") Input email
+            input#inputemail.form-control.col-6(type="email", name="email",size="20" value=(valid) ? valid.email : '')
 
+        .form-group
+            label(for="inputpassword") Input Password
+            input#inputpassword.form-control.col-6(type="password", name="password",size="20" value=(valid) ? valid.password : '')
+        .form-group
+            label(for="avatar") Choose file
+            input#avatar.form-control-file.col-6(type="file", name="avatar")
+
+        
             button.btn.btn-danger.mt-2 Create
